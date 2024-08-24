@@ -1,5 +1,9 @@
 pipeline {
   agent any 
+  tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "Maven 3.9.8"
+    }
   environment {
         // Add Docker to PATH
         PATH = "/Applications/Docker.app/Contents/Resources/bin:${env.PATH}"
