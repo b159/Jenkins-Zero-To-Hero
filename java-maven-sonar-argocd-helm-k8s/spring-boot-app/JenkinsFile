@@ -68,6 +68,7 @@ pipeline {
                 sh '''
                     git config user.email "Junio.xyz@gmail.com"
                     git config user.name "Junio"
+                    git checkout main
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i '' "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
